@@ -1,17 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { addRecipe } from '../services/api';
 import RecipeForm from './RecipeForm';
 
 import '../styles/AddRecipe.css';
 
 const AddRecipe = () => {
-    const navigate = useNavigate();
-
     const handleAddRecipe = (recipe) => {
-        addRecipe(recipe).then(() => {
-            navigate('/')
-        });
+        return addRecipe(recipe);
     };
 
     return (
