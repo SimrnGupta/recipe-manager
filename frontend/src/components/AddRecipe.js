@@ -1,38 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { addRecipe } from '../services/api';
+import RecipeForm from './RecipeForm';
+
+import '../styles/AddRecipe.css';
 
 const AddRecipe = () => {
-    const [title, setTitle] = useState('');
-    const [ingredients, setIngredients] = useState('');
-    const [instructions, setInstructions] = useState('');
+    const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        addRecipe({ title, ingredients, instructions }).then(() => {
-            setTitle('');
-            setIngredients('');
-            setInstructions('');
+    const handleAddRecipe = (recipe) => {
+        addRecipe(recipe).then(() => {
+            navigate('/')
         });
-        // perform error handling
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h2>Add Recipe</h2>
-            <label>
-                Title:
-                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-            </label>
-            <label>
-                Ingredients:
-                <textarea value={ingredients} onChange={(e) => setIngredients(e.target.value)} />
-            </label>
-            <label>
-                Instructions:
-                <textarea value={instructions} onChange={(e) => setInstructions(e.target.value)} />
-            </label>
-            <button type="submit">Add Recipe</button>
-        </form>
+        <div className='container'>
+            <RecipeForm onSubmit={handleAddRecipe} buttonText="Add Recipe" />
+        </div>
     );
 };
 

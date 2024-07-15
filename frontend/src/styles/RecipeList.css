@@ -1,0 +1,60 @@
+h2 {
+    color: #013b30;
+}
+
+.recipe-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+}
+
+.recipe-table th,
+.recipe-table td {
+    padding: 12px 15px;
+}
+
+.recipe-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.recipe-table tbody tr:nth-of-type(even) {
+    background-color: #00987a0f;
+}
+
+.recipe-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.recipe-table button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #009879;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.recipe-table button:hover {
+    background-color: #007f66;
+}
+
+.create-button {
+    border: 2px solid #009879;
+    border-radius: 10px;
+    background-color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: black;
+}
+
+.create-button:hover {
+    background-color: #00987a51;
+}
